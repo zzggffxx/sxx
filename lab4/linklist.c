@@ -67,4 +67,8 @@ linkNode * GetNextLinkNode(linkTable * pLinkTable, linkNode *pLinkNode)
 	{
 		return	pLinkNode->next;
 	}
+	else
+	{
+		return NULL;
+	}
 }
