@@ -38,13 +38,7 @@ typedef struct LinkTableNode
 /*
  * LinkTable Type
  */
-typedef struct LinkTable
-{
-    tLinkTableNode *pHead;
-    tLinkTableNode *pTail;
-    int			SumOfNode;
-    pthread_mutex_t mutex;
-}tLinkTable;
+typedef struct LinkTable tLinkTable;
 
 /*
  * Create a LinkTable
@@ -66,7 +60,7 @@ int DelLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode);
  * Search a LinkTableNode from LinkTable
  * int Conditon(tLinkTableNode * pNode);
  */
-tLinkTableNode * SearchLinkTableNode(tLinkTable *pLinkTable, int Conditon(tLinkTableNode * pNode));
+tLinkTableNode * SearchLinkTableNode(tLinkTable *pLinkTable, int Conditon(tLinkTableNode * pNode, void* args), void* args);
 /*
  * get LinkTableHead
  */
